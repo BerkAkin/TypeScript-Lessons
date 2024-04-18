@@ -1,11 +1,34 @@
-const person = {
+const person: {
+    name: string;
+    age: number;
+    hobbies: string[];
+    //typesctipte iki elemanlı sabit ve özelleşmiş bir role propu istendiğini belirtir yani constructor kalıbı oluşur
+    role: [number, string];
+} = {
     name:"berk",
     age:24,
-    hobbies:["Sports","Cooking"]
-}
+    hobbies:["Sports","Cooking"],
+    //role aslında Tuple'dır ama ts bunu anlayamaz, belli etmek gerekir onu da constructor tanımını yazarak tamamlarız.
+    role: [2,'author']
+};
+
+
+//bu yapılabilir çünkü ts'de bunu kontrol eden bir mekanizma bulunmamaktadır
+//person.role.push('admin');
+
+
+//bu atama yapılamaz çünkü constructor'da ikinci nesne string olarak tanımlanmıştır
+//person.role[1] = 10;
+
+//buna izin verilir çünkğ constructordaki gibi bir yapıyı varolanla değiştiriyoruz
+person.role = [3,'admin'];
+
+
+
+
 
 let favActs: string[];
-favActs = ['Sport',];
+favActs = ['Sport'];
 
 //herhangi bir tipten veri alabilir ama sık kullanılması önerilmez
 let some: any[];
