@@ -9,3 +9,22 @@ const person = {
     role: Role.ADMIN
 }
 
+
+
+
+//ANY 
+let activities: any[]= ["alpha"];
+activities.push(1);
+activities.push(true);
+
+let obje :{
+    name: any,
+    age: any,
+    hobbies: any[],
+    role: any
+} = {
+    name:"Berk",
+    age: 24,
+    hobbies:["camping","fishing"],
+    role: Role.AUTHOR
+};
