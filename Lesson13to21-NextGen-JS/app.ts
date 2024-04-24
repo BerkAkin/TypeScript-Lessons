@@ -32,4 +32,14 @@ const person = {
 };
 //person kopyalanır ama firstName değişir
 const copyPerson = { ...person, firstName: "A" };
-copyPerson
+copyPerson;
+
+//REST OPERATÖRÜ
+const add2 = (...numbers: number[]) => {
+  let result = 0;
+  numbers.reduce((curResult, curValue) => {
+    return curResult + curValue;
+  }, 0);
+};
+
+const addedNumbers = add2(22, 3, 4, 5, 6, 7);
