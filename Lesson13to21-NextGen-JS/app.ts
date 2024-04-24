@@ -1,6 +1,6 @@
 //let and const ES6 (var global scope ve fonksiyon scope haricini bilmez)
 const userName = "B";
-let age = 24;
+let age2 = 24;
 
 //Arrow Functions (this kullanılamaz)
 let fon = (a: number) => {
@@ -43,3 +43,11 @@ const add2 = (...numbers: number[]) => {
 };
 
 const addedNumbers = add2(22, 3, 4, 5, 6, 7);
+
+//ARRAY AND OBJECT DESTRUCTURING
+
+const hobby1 = hobbies[0];
+const hobby2 = hobbies[1];
+
+const [alpha, beta, ...remainingHobby] = hobbies; //array destructuring
+const { firstName, age } = person; //object destructuring
