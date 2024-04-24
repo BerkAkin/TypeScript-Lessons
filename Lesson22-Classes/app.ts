@@ -31,7 +31,7 @@ accounting.describe();
 //accountingCopy.describe();
 
 class Home {
-  constructor(public name: string, public address: string) {}
+  constructor(public readonly name: string, public address: string) {}
   describe() {
     console.log("Home name: " + this.name + " address: " + this.address);
   }
