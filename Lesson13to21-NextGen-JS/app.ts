@@ -20,3 +20,16 @@ const add = (a: number, b: number = 1) => {
   return a + b;
 };
 add(5);
+
+//Spread Operator (...) objeler referans türü olduğu ve bellek değişip adres değişmediği için push yapılabilir
+const hobbies = ["Sports", "Cooking"];
+const activeHobbies = ["Hiking"];
+activeHobbies.push(...hobbies);
+
+const person = {
+  firstName: "B",
+  age: 24,
+};
+//person kopyalanır ama firstName değişir
+const copyPerson = { ...person, firstName: "A" };
+copyPerson
