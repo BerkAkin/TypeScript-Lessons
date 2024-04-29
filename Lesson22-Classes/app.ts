@@ -19,6 +19,33 @@ class Department {
   }
 }
 
+class Accounting extends Department {
+  constructor(id: string, private _reports: string[]) {
+    super(id);
+  }
+  setReport(text: string) {
+    this._reports.push(text);
+  }
+  getReports() {
+    console.log(this._reports);
+  }
+}
+
+class ITDepartment extends Department {
+  admins: string[];
+  constructor(id: string, admins: string[]) {
+    super(id);
+    this.admins = admins;
+  }
+}
+
+class Home {
+  constructor(public readonly name: string, public address: string) {}
+  describe() {
+    console.log("Home name: " + this.name + " address: " + this.address);
+  }
+}
+
 let accounting = new Department("Accounting");
 console.log(accounting);
 accounting.addEmployee("Max");
@@ -30,12 +57,10 @@ accounting.describe();
 //const accountingCopy = { name: "dummy", describe: accounting.describe };
 //accountingCopy.describe();
 
-class Home {
-  constructor(public readonly name: string, public address: string) {}
-  describe() {
-    console.log("Home name: " + this.name + " address: " + this.address);
-  }
-}
-
 let home = new Home("home", "istanbul");
 home.describe();
+
+const it = new ITDepartment("IT", ["Berk"]);
+const accounting2 = new Accounting("Accounting", []);
+accounting2.setReport("Something went wrong");
+accounting2.getReports();
