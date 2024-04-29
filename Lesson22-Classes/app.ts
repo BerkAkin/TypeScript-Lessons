@@ -1,6 +1,6 @@
 class Department {
   private name: string;
-  private _employees: string[] = [];
+  protected _employees: string[] = [];
   constructor(n: string) {
     this.name = n;
   }
@@ -23,6 +23,13 @@ class Accounting extends Department {
   constructor(id: string, private _reports: string[]) {
     super(id);
   }
+  addEmployee(name: string) {
+    if (name === "Max") {
+      return;
+    }
+    this._employees.push(name);
+  }
+
   setReport(text: string) {
     this._reports.push(text);
   }
@@ -64,3 +71,5 @@ const it = new ITDepartment("IT", ["Berk"]);
 const accounting2 = new Accounting("Accounting", []);
 accounting2.setReport("Something went wrong");
 accounting2.getReports();
+accounting2.addEmployee("Cem");
+accounting2.addEmployee("Max");
