@@ -41,19 +41,5 @@ class Human {
 }
 
 const human = new Human("Asian", 20, "John", "Male");
-console.log(human);
 console.log(Human.getCount());
-console.log(human.race);
-console.log(human.age);
-console.log(human.name);
-console.log(human.gender);
-human.race = "Indian";
-human.age = 25;
-human.name = "Jane";
-human.gender = "Female";
-console.log(human);
-console.log(Human.getCount());
-console.log(human.race);
-console.log(human.age);
-console.log(human.name);
-console.log(human.gender);
+console.log(human.race, human.age, human.name, human.gender);
