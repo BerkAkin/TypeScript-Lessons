@@ -19,13 +19,17 @@ user1.speak("merhaba");
 //INTERFACELERİN SINIFLARLA BİRLİKTE KULLANIMI
 
 interface Greetable {
-  readonly name: string;
   greet(phrase: string): void;
 }
 
-class Person2 implements Greetable {
+//EXTENDING INTERFACES
+interface Named extends Greetable {
+  readonly name: string;
+}
+
+class Person2 implements Named {
   name: string;
-  private _age: number = 30;
+  age: number = 30;
   constructor(name: string) {
     this.name = name;
   }
@@ -34,7 +38,7 @@ class Person2 implements Greetable {
   }
 }
 
-let user2: Greetable;
+let user2: Named;
 user2 = new Person2("Berk");
 
 //READONLY PROP DEĞİŞTİRİLEMEZ INTERFACE ÜZERİNDE
