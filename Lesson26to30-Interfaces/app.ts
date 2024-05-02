@@ -15,3 +15,23 @@ user1 = {
 };
 //INTERFACEDEN TÜRETİLMİŞ NESNENİN FONKSİYON KULLANIMI
 user1.speak("merhaba");
+
+//INTERFACELERİN SINIFLARLA BİRLİKTE KULLANIMI
+
+interface Greetable {
+  name: string;
+  greet(phrase: string): void;
+}
+
+class Person2 implements Greetable {
+  name: string;
+  private _age: number = 30;
+  constructor(name: string) {
+    this.name = name;
+  }
+  greet(name: string) {
+    console.log(name);
+  }
+}
+
+let user2 = new Person2("Berk");
