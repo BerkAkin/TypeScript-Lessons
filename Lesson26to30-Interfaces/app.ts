@@ -43,3 +43,15 @@ user2 = new Person2("Berk");
 
 //READONLY PROP DEĞİŞTİRİLEMEZ INTERFACE ÜZERİNDE
 user2.name = "asd";
+
+//INTERFACES AS FUNCTION TYPE
+interface AddFn {
+  (a: number, b: number): number;
+}
+
+let add: AddFn;
+add = (n1: number, n2: number) => {
+  return n1 + n2;
+};
+
+add(3, 4);
