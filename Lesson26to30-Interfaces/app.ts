@@ -25,6 +25,10 @@ interface Greetable {
 //EXTENDING INTERFACES
 interface Named extends Greetable {
   readonly name: string;
+
+  //OPTIONAL PROPERTIES AND PARAMETERS
+  outputName?: string;
+  outputFunc?: () => {};
 }
 
 class Person2 implements Named {
