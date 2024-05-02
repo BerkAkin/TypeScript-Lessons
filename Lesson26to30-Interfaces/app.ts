@@ -19,7 +19,7 @@ user1.speak("merhaba");
 //INTERFACELERİN SINIFLARLA BİRLİKTE KULLANIMI
 
 interface Greetable {
-  name: string;
+  readonly name: string;
   greet(phrase: string): void;
 }
 
@@ -34,4 +34,8 @@ class Person2 implements Greetable {
   }
 }
 
-let user2 = new Person2("Berk");
+let user2: Greetable;
+user2 = new Person2("Berk");
+
+//READONLY PROP DEĞİŞTİRİLEMEZ INTERFACE ÜZERİNDE
+user2.name = "asd";
