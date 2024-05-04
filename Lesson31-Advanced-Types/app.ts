@@ -71,6 +71,15 @@ if (input3) {
   (input3 as HTMLInputElement).value = "1";
 }
 
-//INDEX PROPERTIES
+//INDEX PROPERTIES (İÇERİSİNE HANGİ PROP VE HANGİ DEĞERLERİN GELECEĞİ KESİN OLARAK BİLİNMEYEN INTERFACELERDE KULLANILIR)
 
+interface errorContainer {
+  [prop: string]: string;
+}
 
+const error: errorContainer = {
+  email: "not valid",
+  username: "must start with a char",
+};
+
+//FUNCTION OVERLOADS
