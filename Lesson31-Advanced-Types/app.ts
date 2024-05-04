@@ -58,3 +58,19 @@ function moveAnimal(animal: Animal) {
 
 moveAnimal({ type: "bird", flyingSpeed: 10 });
 moveAnimal({ type: "horse", runningSpeed: 80 });
+
+//TYPE CASTING
+
+const input = <HTMLInputElement>document.getElementById("user-input")!;
+const input2 = document.getElementById("user-input")! as HTMLInputElement;
+input.value = "1";
+input2.value = "1";
+
+const input3 = document.getElementById("user-input");
+if (input3) {
+  (input3 as HTMLInputElement).value = "1";
+}
+
+//INDEX PROPERTIES
+
+
