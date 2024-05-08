@@ -96,3 +96,16 @@ function add(a: any, b?: any) {
 
 const total = add(1, 2);
 const total2 = add("1", "2");
+total2.split(" ");
+
+//OPTIONAL CHAINING
+
+const user = {
+  id: 2,
+  name: "Berk",
+  pet: {
+    type: "dog",
+  },
+};
+
+console.log(user?.pet?.type);
