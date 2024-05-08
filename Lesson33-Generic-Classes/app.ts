@@ -20,3 +20,22 @@ numberStorage.addItem(123);
 const unionStorage = new DataStorage<string | number>();
 unionStorage.addItem("Max");
 unionStorage.addItem(123);
+
+//GENERIC UTILITY TYPES
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+function createCourseGoal(title: string, description: string, completeUntil: Date): CourseGoal {
+  let CourseGoal: Partial<CourseGoal> = {};
+  CourseGoal.title = title;
+  CourseGoal.description = description;
+  CourseGoal.completeUntil = completeUntil;
+  return CourseGoal as CourseGoal;
+}
+
+const names: Readonly<string[]> = ["Max", "Anna"];
+names.push("Manu");
+names.pop();
