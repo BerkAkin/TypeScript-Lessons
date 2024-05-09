@@ -1,18 +1,19 @@
-function RenderComponent(template: string, target: string) {
+function Render(template: string, target: string) {
   return function (constructor: any) {
-    const hookEl = document.getElementById(target);
-    if (hookEl) {
-      const p = new constructor();
-      hookEl.innerHTML = template;
-      hookEl.querySelector("h1")!.textContent = p.name;
+    const element = document.getElementById(target);
+    if (element) {
+      const temp = new constructor();
+      element.innerHTML = template;
+      element.querySelector("h1")!.textContent = temp.name;
     }
   };
 }
 
-@RenderComponent("<h1>MY PERSON OBJECT</h1>", "app")
-class Person2 {
-  name = "Berk";
-  constructor() {
-    console.log("Person created");
+@Render("<h1>Merhaba</h1>", "app")
+class Human {
+  private _name: string;
+  constructor(name: string) {
+    this._name = name;
+    console.log("Constructor çalıştı");
   }
 }
