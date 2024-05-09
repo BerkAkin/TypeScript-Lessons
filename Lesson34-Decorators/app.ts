@@ -29,3 +29,12 @@ class Animal {
     console.log("Animal Created");
   }
 }
+
+//ADDING MULTIPLE DECORATORS
+@Logger
+@Factory("Logging-Plant")
+class Plant {
+  constructor() {
+    console.log("Plant Created");
+  }
+}
