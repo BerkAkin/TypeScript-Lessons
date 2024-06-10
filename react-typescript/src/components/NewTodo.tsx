@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 type NewTodoProps = {
   onAddTodo: (text: string) => void;
